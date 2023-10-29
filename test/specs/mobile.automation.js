@@ -13,3 +13,12 @@ describe('Open Application until Home Page is visible',() => {
         await $("//android.widget.Button[@resource-id='com.fghilmany.dietmealapp:id/bt_finish']").click();
     })
 })
+
+const assert = require('assert');
+describe('Test Element Visibility', () => {
+    it('should check if the element home page is visible', async () => {
+      const element = await driver.$('//android.widget.TextView[@resource-id="com.fghilmany.dietmealapp:id/tv_header_desc"]');
+      const isDisplayed = await element.isDisplayed();
+      assert.strictEqual(isDisplayed, true, 'The element is not visible');
+    });
+  });
